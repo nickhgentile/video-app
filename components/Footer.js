@@ -51,7 +51,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="absolute bottom-0 left-0 right-0 bg-black">
+    <footer className="absolute bottom-0 left-0 right-0 z-0 bg-black">
       <div className="px-4 py-12 mx-auto overflow-hidden max-w-7xl sm:px-6 lg:px-8">
         <nav
           className="flex flex-wrap justify-center -mx-5 -my-2"
