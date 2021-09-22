@@ -1,8 +1,10 @@
+import { useEffect } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 
 export default function Form({
   formClass = '',
   onSubmit,
+  resetOnSubmit = false,
   mode = 'onChange',
   showSubmit = true,
   submitText = 'Submit',
@@ -24,6 +26,12 @@ export default function Form({
     form.reset(defaultValues);
   };
 
+  useEffect(() => {
+    if (resetOnSubmit) {
+      resetForm();
+    }
+  }, [form.formState.isSubmitted]);
+
   return (
     <FormProvider {...form}>
       <form className={formClass} onSubmit={form.handleSubmit(onSubmit)}>
@@ -38,7 +46,7 @@ export default function Form({
             <input
               className={submitClass}
               type="submit"
-              disabled={form.formState.isSubmitted}
+              disabled={form.formState.isSubmitting || !form.formState.isDirty}
               value={submitText}
             />
           )}

@@ -131,8 +131,8 @@ export default function Video({ id = 'video1' }) {
           Loading ...
         </div>
       )}
-      <div id="video1" className="min-h-screen w-full"></div>
-      <div id="video2" className="min-h-screen w-full"></div>
+      <div id="video1" className="w-full min-h-screen"></div>
+      <div id="video2" className="w-full min-h-screen"></div>
     </div>
   );
 }

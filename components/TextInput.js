@@ -19,7 +19,7 @@ export default function TextInput({
 
   return (
     <label htmlFor={htmlId} className="block mb-4">
-      <span className={'label ' + labelClass}>{label}</span>
+      {label && <span className={'label ' + labelClass}>{label}</span>}
       <input
         type={type ? type : 'text'}
         id={htmlId}

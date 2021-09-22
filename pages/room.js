@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/dist/client/router';
 import Host from '../components/Host';
+import Chat from '../components/Chat';
 import Moderators from '../components/Moderators';
 import Participants from '../components/Participants';
 import Controls from '../components/Controls';
@@ -12,23 +13,20 @@ export default function Room() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!token) {
-      router.push('/');
-    }
+    // if (!token) {
+    //   router.push('/');
+    // }
   }, []);
 
   return (
     <>
-      {token && (
-        <>
-          {/* <Host></Host> */}
-          <Video id="video1"></Video>
-          <Video id="video2"></Video>
-          <Moderators></Moderators>
-          <Participants></Participants>
-          <Controls></Controls>
-        </>
-      )}
+      <Host></Host>
+      <Chat></Chat>
+      {/* <Video id="video1"></Video>
+      <Video id="video2"></Video> */}
+      <Moderators></Moderators>
+      <Participants></Participants>
+      {/* <Controls></Controls> */}
     </>
   );
 }

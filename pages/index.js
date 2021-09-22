@@ -1,10 +1,19 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import LoginForm from '../components/LoginForm';
+import { resetRoom } from '../store/reducers/room';
 
 export default function Home() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(resetRoom());
+  }, []);
+
   return (
     <>
-      <div className="min-h-full bg-gray-50 flex flex-col justify-center py-48 sm:px-6 lg:px-8">
-        <h1 className="text-center text-3xl font-extrabold text-gray-900">
+      <div className="flex flex-col justify-center min-h-full py-48 sm:px-6 lg:px-8">
+        <h1 className="text-3xl font-extrabold text-center text-gray-900">
           Join a Room
         </h1>
 
