@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { updateName, updateRoom, updateToken } from '../store/reducers/room';
 
@@ -31,8 +31,8 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4">
-      <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+    <div className="px-4 mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
         <Alert></Alert>
         <Form
           onSubmit={onSubmit}
