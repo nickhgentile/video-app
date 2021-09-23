@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { updateName, updateRoom, updateToken } from '../store/reducers/room';
 
@@ -9,6 +9,7 @@ import TextInput from './TextInput';
 
 export default function LoginForm() {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const onSubmit = async (data) => {
     let token = await axios.post('/api/get_token', {
@@ -26,7 +27,7 @@ export default function LoginForm() {
     //   )
     // );
 
-    Router.push('/room');
+    router.push('/room');
   };
 
   return (
