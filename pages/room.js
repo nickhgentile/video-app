@@ -20,7 +20,7 @@ export default function Room() {
 
   return (
     <>
-      <Host></Host>
+      {/* <Host></Host> */}
       <Chat></Chat>
       {/* <Video id="video1"></Video>
       <Video id="video2"></Video> */}
