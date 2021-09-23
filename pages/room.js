@@ -1,6 +1,6 @@
 // import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useRouter } from 'next/dist/client/router';
+import Router from 'next/router';
 import Host from '../components/Host';
 import Chat from '../components/Chat';
 import Moderators from '../components/Moderators';
@@ -10,11 +10,10 @@ import Video from '../components/Video';
 
 export default function Room() {
   const { token } = useSelector((state) => state.room);
-  const router = useRouter();
 
   // useEffect(() => {
   //   if (!token) {
-  //     router.push('/');
+  //     Router.push('/');
   //   }
   // }, []);
 
