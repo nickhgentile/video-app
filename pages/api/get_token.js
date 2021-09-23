@@ -6,6 +6,7 @@ const auth = {
   password: process.env.API_KEY
 };
 const apiurl = process.env.SPACE;
+
 const moderatorPermissions = [
   'room.list_available_layouts',
   'room.set_layout',
@@ -35,19 +36,25 @@ const normalPermissions = [
 ];
 
 export default async function tokenHandler(req, res) {
-  let { user_name, room_name, mod } = req.body;
+  let { user_name, room_name } = req.body;
 
   try {
+    let moderator = user_name === 'host';
+    let perms = moderator
+      ? [...normalPermissions, ...moderatorPermissions]
+      : normalPermissions;
+
+    let body = {
+      user_name,
+      room_name: room_name,
+      auto_create_room: true,
+      permissions: perms
+    }
+    console.log(body);
+
     let token = await axios.post(
       apiurl + '/room_tokens',
-      {
-        user_name,
-        room_name: room_name,
-        auto_create_room: true,
-        permissions: mod
-          ? [...normalPermissions, ...moderatorPermissions]
-          : normalPermissions
-      },
+      body,
       { auth }
     );
 

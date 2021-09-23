@@ -14,8 +14,7 @@ export default function LoginForm() {
   const onSubmit = async (data) => {
     let token = await axios.post('/api/get_token', {
       user_name: data.name,
-      room_name: data.room,
-      mod: true
+      room_name: data.room
     });
 
     dispatch(updateName(data.name));
