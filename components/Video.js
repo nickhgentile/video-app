@@ -18,7 +18,7 @@ export default function Video({ id = 'video1' }) {
       console.log('Setting up RTC session', id, token);
 
       try {
-        room = await SignalWire.Video.createRoomObject({
+        room = await SignalWire.Video.joinRoom({
           token,
           rootElementId: id,
           video: true
@@ -27,7 +27,7 @@ export default function Video({ id = 'video1' }) {
         console.log('test error', e);
       }
 
-      await room.join();
+
 
       room.on('room.joined', async (e) => {
         // thisMemberId.current = e.member_id;
@@ -132,7 +132,6 @@ export default function Video({ id = 'video1' }) {
         </div>
       )}
       <div id="video1" className="w-full min-h-screen"></div>
-      <div id="video2" className="w-full min-h-screen"></div>
     </div>
   );
 }
