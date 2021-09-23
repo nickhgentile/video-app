@@ -9,8 +9,8 @@ import Controls from '../components/Controls';
 import Video from '../components/Video';
 
 export default function Room() {
-  const { token } = useSelector((state) => state.room);
-  const router = useRouter();
+  // const { token } = useSelector((state) => state.room);
+  // const router = useRouter();
 
   // useEffect(() => {
   //   if (!token) {
@@ -20,12 +20,13 @@ export default function Room() {
 
   return (
     <>
+      Room page
       {/* <Host></Host> */}
-      <Chat></Chat>
+      {/* <Chat></Chat> */}
       {/* <Video id="video1"></Video>
       <Video id="video2"></Video> */}
-      <Moderators></Moderators>
-      <Participants></Participants>
+      {/* <Moderators></Moderators> */}
+      {/* <Participants></Participants> */}
       {/* <Controls></Controls> */}
     </>
   );
