@@ -20,24 +20,24 @@ export default function Chat() {
     scrollToBottom();
   };
 
-  useEffect(() => {
-    getChatHeight();
-  }, []);
+  // useEffect(() => {
+  //   getChatHeight();
+  // }, []);
 
-  const getChatHeight = () => {
-    let participantsEl = document.getElementsByClassName(
-      'participants-wrapper'
-    );
+  // const getChatHeight = () => {
+  //   let participantsEl = document.getElementsByClassName(
+  //     'participants-wrapper'
+  //   );
 
-    let participantsHeight =
-      participantsEl.length > 0 ? participantsEl[0].height : 0;
+  //   let participantsHeight =
+  //     participantsEl.length > 0 ? participantsEl[0].height : 0;
 
-    console.log(participantsHeight);
+  //   console.log(participantsHeight);
 
-    setChatHeight({
-      height: participantsHeight
-    });
-  };
+  //   setChatHeight({
+  //     height: participantsHeight
+  //   });
+  // };
 
   return (
     <div className="absolute top-0 right-0 z-10 flex flex-col w-3/12 p-4 h-5/6 chat-wrapper">
