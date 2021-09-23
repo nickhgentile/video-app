@@ -14,7 +14,7 @@ export default function Room() {
 
   // useEffect(() => {
   //   if (!token) {
-  //     Router.push('/');
+  //     router.push('/');
   //   }
   // }, []);
 
