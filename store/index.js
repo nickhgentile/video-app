@@ -30,17 +30,22 @@ const reducer = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, reducer);
 
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+    }
+  })
+});
+
+const persistor = persistStore(store);
+
 const Store = () => {
-  const store = configureStore({
-    reducer: persistedReducer,
-    middleware: getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
-      }
-    })
-  });
-  const persistor = persistStore(store);
-  return { store, persistor };
+  return {
+    store,
+    persistor
+  };
 };
 
 export default Store;

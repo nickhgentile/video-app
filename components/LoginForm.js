@@ -6,7 +6,6 @@ import { updateName, updateRoom, updateToken } from '../store/reducers/room';
 import Alert from './Alert';
 import Form from './Form';
 import TextInput from './TextInput';
-// import { Login, Logout } from './Auth';
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -47,8 +46,6 @@ export default function LoginForm() {
             placeholder="Room name"
           ></TextInput>
         </Form>
-        {/* <Login/>
-        <Logout/> */}
       </div>
     </div>
   );

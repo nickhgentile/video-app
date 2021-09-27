@@ -1,4 +1,4 @@
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import Host from '../components/Host';
@@ -12,11 +12,11 @@ export default function Room() {
   const { token } = useSelector((state) => state.room);
   const router = useRouter();
 
-  // useEffect(() => {
-  //   if (!token) {
-  //     router.push('/');
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (!token) {
+      router.push('/');
+    }
+  }, []);
 
   return (
     <>

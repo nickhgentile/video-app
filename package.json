@@ -16,6 +16,7 @@
     ]
   },
   "dependencies": {
+    "@auth0/auth0-react": "^1.8.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
@@ -24,7 +25,6 @@
     "@reduxjs/toolkit": "^1.6.1",
     "@signalwire/js": "^3.2.1",
     "@tailwindcss/forms": "^0.3.3",
-    "@auth0/auth0-react": "^1.8.0",
     "axios": "^0.21.4",
     "body-parser": "^1.19.0",
     "classnames": "^2.3.1",
@@ -39,7 +39,7 @@
     "react-id-generator": "^3.0.2",
     "react-redux": "^7.2.5",
     "redux": "^4.1.1",
-    "redux-persist": "^5.10.0"
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
