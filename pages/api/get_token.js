@@ -47,16 +47,10 @@ export default async function tokenHandler(req, res) {
     let body = {
       user_name,
       room_name: room_name,
-      auto_create_room: false,
       permissions: perms
-    }
-    console.log(body);
+    };
 
-    let token = await axios.post(
-      apiurl + '/room_tokens',
-      body,
-      { auth }
-    );
+    let token = await axios.post(apiurl + '/room_tokens', body, { auth });
 
     token = token.data?.token;
 

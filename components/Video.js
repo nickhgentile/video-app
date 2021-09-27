@@ -4,7 +4,7 @@ import * as SignalWire from '@signalwire/js';
 
 export default function Video({ id = 'video1' }) {
   const dispatch = useDispatch();
-  const { name, room, token, details } = useSelector((state) => state.room);
+  const { token } = useSelector((state) => state.room);
   let [setupDone, setSetupDone] = useState(false);
   let [isLoading, setIsLoading] = useState(true);
 
@@ -15,19 +15,11 @@ export default function Video({ id = 'video1' }) {
     setSetupDone(true);
 
     try {
-      console.log('Setting up RTC session', id, token);
-
-      try {
-        room = await SignalWire.Video.joinRoom({
-          token,
-          rootElementId: id,
-          video: true
-        });
-      } catch (e) {
-        console.log('test error', e);
-      }
-
-
+      room = await SignalWire.Video.createRoomObject({
+        token,
+        rootElementId: id,
+        video: true
+      });
 
       room.on('room.joined', async (e) => {
         // thisMemberId.current = e.member_id;
@@ -84,6 +76,8 @@ export default function Video({ id = 'video1' }) {
         // console.log(memberList.current);
       });
 
+      await room.join();
+
       let layouts = (await room.getLayouts()).layouts;
       let cameras = await SignalWire.WebRTC.getCameraDevicesWithPermissions();
       let microphones =
@@ -114,9 +108,8 @@ export default function Video({ id = 'video1' }) {
         // eventLogger('The list of speakers has changed');
         // onRoomUpdate({ speakers: changes.devices });
       });
-    } catch (error) {
-      // setIsLoading(false);
-      console.error('Something went wrong', error);
+    } catch (e) {
+      console.log('test error', e);
     }
   }
 

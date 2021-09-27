@@ -22,8 +22,6 @@ export default function Room() {
     <>
       <Host></Host>
       <Chat></Chat>
-      {/* <Video id="video1"></Video>
-      <Video id="video2"></Video> */}
       <Moderators></Moderators>
       <Participants></Participants>
       {/* <Controls></Controls> */}
