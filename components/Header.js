@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from './Link';
 
-export default function Header() {
+export default function Header({ className = 'text-white bg-black' }) {
   return (
-    <header className="relative z-20 bg-black">
+    <header className={'relative z-20 ' + className}>
       <nav className="px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex items-center justify-between w-full py-6">
           <div className="flex items-center">

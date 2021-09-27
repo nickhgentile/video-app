@@ -7,6 +7,7 @@ import Moderators from '../components/Moderators';
 import Participants from '../components/Participants';
 import Controls from '../components/Controls';
 import Video from '../components/Video';
+import LayoutVideo from '../components/LayoutVideo';
 
 export default function Room() {
   const { token } = useSelector((state) => state.room);
@@ -28,3 +29,7 @@ export default function Room() {
     </>
   );
 }
+
+Room.getLayout = function getLayout(page) {
+  return <LayoutVideo>{page}</LayoutVideo>;
+};
