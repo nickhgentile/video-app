@@ -4,12 +4,12 @@ import Link from '../components/Link';
 export default function Footer() {
   const navigation = {
     main: [
-      { name: 'Link', href: '#' },
-      { name: 'Link', href: '#' },
-      { name: 'Link', href: '#' },
-      { name: 'Link', href: '#' },
-      { name: 'Link', href: '#' },
-      { name: 'Link', href: '#' }
+      { name: 'Link1', href: '#' },
+      { name: 'Link2', href: '#' },
+      { name: 'Link3', href: '#' },
+      { name: 'Link4', href: '#' },
+      { name: 'Link5', href: '#' },
+      { name: 'Link6', href: '#' }
     ],
     social: [
       {

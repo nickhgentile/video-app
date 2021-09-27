@@ -2,6 +2,8 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import store from './../store';
 import '../styles/globals.css';
+import { UserProvider } from '@auth0/nextjs-auth0';
+
 import initFontAwesome from '../utils/initFontAwesome';
 
 export default function App({ Component, pageProps }) {
@@ -12,10 +14,12 @@ export default function App({ Component, pageProps }) {
   initFontAwesome();
 
   return getLayout(
-    <Provider store={store().store}>
-      <PersistGate loading={null} persistor={store().persistor}>
-        <Component {...pageProps} />
-      </PersistGate>
-    </Provider>
+    <UserProvider>
+      <Provider store={store().store}>
+        <PersistGate loading={null} persistor={store().persistor}>
+          <Component {...pageProps} />
+        </PersistGate>
+      </Provider>
+    </UserProvider>
   );
 }
