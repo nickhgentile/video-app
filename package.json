@@ -22,7 +22,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@reduxjs/toolkit": "^1.6.1",
-    "@signalwire/js": "^3.0.0-beta.6",
     "@signalwire/js": "^3.2.1",
     "@tailwindcss/forms": "^0.3.3",
     "@auth0/auth0-react": "^1.8.0",
