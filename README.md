@@ -49,3 +49,7 @@ git push origin
 ```
 
 Navigate to [site](https://experience.aardvark.guru/)
+
+## Documentation
+- [Signalwire client side SDK](https://developer.signalwire.com/client-sdk/docs)
+- [Signalwire server side APIs](https://developer.signalwire.com/apis/reference/overview)

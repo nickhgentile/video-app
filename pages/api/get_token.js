@@ -47,6 +47,7 @@ export default async function tokenHandler(req, res) {
     let body = {
       user_name,
       room_name: room_name,
+      auto_create_room: false,
       permissions: perms
     };
 
